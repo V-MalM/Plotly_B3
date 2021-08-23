@@ -100,12 +100,14 @@ function optionChanged(Sel_SubjID) {
     Plotly.newPlot('bar',Data)
 
     get_OTU_id = get_OTU['otu_ids']
+    get_otu_labels = get_OTU['otu_labels']
     get_sample_values = get_OTU['sample_values']
 
     var trace2 = {
         x: get_OTU_id,
         y: get_sample_values,
         mode: 'markers',
+        text: get_otu_labels,
         marker: {
           size : get_sample_values,
           color: get_OTU_id,
