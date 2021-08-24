@@ -53,7 +53,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
 
     * The needle shows the wash frequecy of selected subject whenever a new sample is selected.
         <p><img src="DashBoard/Images/gauge_new.jpg" width="50%"></p>
-    <!-- ![dashboard](DashBoard/Images/gauge_new.jpg) -->
+    <!-- ![dashboard](DashBoard/Images/gauge_nw.jpg) -->
 
     * Reference
         * [Plotly.js documentation](https://plot.ly/javascript/)
