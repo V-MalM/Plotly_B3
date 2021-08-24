@@ -2,9 +2,9 @@
 ![Bacteria](DashBoard/Images/bacteria.jpg)
 ## Repository Files and Folders:
 
-*  [DashBoard(Code)](/DashBoard) : 
-    * [App.js](/Mission_to_Mars/static/css.app.js)  
-    * [Images](/Mission_to_Mars/Images)    
+*  [DashBoard](/DashBoard) : 
+    * [App.js](/DashBoard/static/css.app.js)  
+    * [Images](/DashBoard/Images)    
 
 ## Project Description 
 
@@ -17,7 +17,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
 
 ## Step 1: Plotly
 
-1. Used the D3 library to read in  [samples.json](samples.json).
+1. Used the D3 library to read in  [samples.json](/DashBoard/samples.json).
 
 2. Created a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
     * Used `sample_values` as the values for the bar chart.
