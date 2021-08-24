@@ -15,7 +15,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
     * Used `sample_values` as the values for the bar chart.
     * Used `otu_ids` as the labels for the bar chart.
     * Used `otu_labels` as the hovertext for the chart.
-        <table width="25%" aligh="center"><tr><td><img src="DashBoard/Images/horizontal_bar.jpg"></td></tr></table>
+        <p><img src="DashBoard/Images/horizontal_bar.jpg" width="25%"></p>
     <!-- ![Bar](DashBoard/Images/horizontal_bar.jpg) -->
 
 3. Created a bubble chart that displays each sample.
@@ -24,7 +24,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
     * Used `sample_values` for the marker size.
     * Used `otu_ids` for the marker colors.
     * Used `otu_labels` for the text values.
-        <table width="50%" aligh="center"><tr><td><img src="DashBoard/Images/bubble.jpg"></td></tr></table>
+        <p><img src="DashBoard/Images/bubble.jpg" width="50%"></p>
 
     <!-- ![Bubble](DashBoard/Images/bubble.jpg) -->
 
@@ -32,19 +32,19 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
 
 5. Displayed each key-value pair from the metadata JSON object .
     * Metadata
-        <table width="10%" aligh="center"><tr><td><img src="DashBoard/Images/metadata.jpg"></td></tr></table>
+        <p><img src="DashBoard/Images/metadata.jpg" width="10%"></p>
     <!-- ![Bar](DashBoard/Images/metadata.jpg) -->
 
 6. All the plots change the display based on the data for the current sample selection.
 
     * Layout of the dashboard is shown below:
-        <table width="80%" aligh="center"><tr><td><img src="DashBoard/Images/dashboard_new.jpg"></td></tr></table>
+        <p><img src="DashBoard/Images/dashboard_new.jpg" width="80%"></p>
     <!-- ![dashboard](DashBoard/Images/dashboard_new.jpg) -->
 
 * The Gauge Chart plots the weekly washing frequency of the individual. It is built using  <https://plot.ly/javascript/gauge-charts/> as a guide
 
     * The needle shows the wash frequecy of selected subject whenever a new sample is selected.
-        <table width="25%" aligh="center"><tr><td><img src="DashBoard/Images/gauge_new.jpg"></td></tr></table>
+        <p><img src="DashBoard/Images/gauge_new.jpg" width="25%"></p>
     <!-- ![dashboard](DashBoard/Images/gauge_new.jpg) -->
 
     * Reference
