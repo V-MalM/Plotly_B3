@@ -2,7 +2,7 @@
 ![Bacteria](DashBoard/Images/bacteria.jpg)
 ## Repository Files and Folders:
 
-*  [DashBoard](/DashBoard) : 
+*  [DashBoard](/DashBoard)
     * [App.js](/DashBoard/static/js/app.js)  
     * [Images](/DashBoard/Images)    
 
