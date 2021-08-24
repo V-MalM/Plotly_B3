@@ -1,4 +1,3 @@
-
 function init()
 {
  d3.json("samples.json").then (data=> {
@@ -7,7 +6,7 @@ function init()
     //Build the drop down
     var Subject_Dropdown = d3.select("#selDataset")    
     var SubjID = data['names']
-    for (let i in SubjID)
+    for (var i in SubjID)
     {
     sel_option = Subject_Dropdown.append("option").text(SubjID[i])
     sel_option.attr("value", SubjID[i])
@@ -26,14 +25,14 @@ function optionChanged(Sel_SubjID) {
     
     var metaData = data['metadata']
 
-    let get_sel_samp_record = metaData.filter(sel_sample=>sel_sample.id == Sel_SubjID)[0]
+    var get_sel_samp_record = metaData.filter(sel_sample=>sel_sample.id == Sel_SubjID)[0]
     console.log("this is metedata object", get_sel_samp_record)
 
     // we will need this variable for gauge
-    get_wfreq = get_sel_samp_record['wfreq']
+    var get_wfreq = get_sel_samp_record['wfreq']
 
     // call Gauge function
-    buildGauge(get_wfreq);
+    dispGauge(get_wfreq);
   
 
     var Subject_Details = d3.select("#sample-metadata") 
@@ -51,7 +50,7 @@ function optionChanged(Sel_SubjID) {
     // [["id", 940],["ethnicity", "Caucasian"],["gender", "F"],["age", 24]["location", "Beaufort/NC"],["bbtype", "I"],["wfreq", 2]]
 
     
-    let get_sel_samp_record_arr = Object.entries(get_sel_samp_record)
+    var get_sel_samp_record_arr = Object.entries(get_sel_samp_record)
     //console.log("this is metadata arr", get_sel_samp_record_arr)
 
     get_sel_samp_record_arr.forEach(([key, value])=>{
@@ -59,7 +58,7 @@ function optionChanged(Sel_SubjID) {
     })
 
     var Samples = data['samples']
-    let get_OTU = Samples.filter(sel_OTU=>sel_OTU.id == Sel_SubjID)[0]
+    var get_OTU = Samples.filter(sel_OTU=>sel_OTU.id == Sel_SubjID)[0]
 
     // console.log("This IS", get_OTU)
     
@@ -71,63 +70,189 @@ function optionChanged(Sel_SubjID) {
     // To do the sorting , we need to join the values from matching indices of 3 arrays to an array
     // of objects with key value pair properties
     // Then, sort by sample_values and rearrange into arrays using map method and then plot
-    // In this case though , the data is already sorted
+    // In this case though , the data is already sorted. So we are goinf to slice and reverse
 
-    get_top_10_OTU_id        = get_OTU['otu_ids'].slice(0,10).reverse()
-    get_top_10_OTU_id_lbl    = get_top_10_OTU_id.map(otu_ID => `OTU ${otu_ID}`)
-    get_top_10_OTU_labels    = get_OTU['otu_labels'].slice(0,10).reverse()
-    get_top_10_sample_values = get_OTU['sample_values'].slice(0,10).reverse()
+    var top_10_OTU_id        = get_OTU['otu_ids'].slice(0,10).reverse()
+    var top_10_OTU_id_lbl    = top_10_OTU_id.map(otu_ID => `OTU ${otu_ID}`)
+    var top_10_OTU_labels    = get_OTU['otu_labels'].slice(0,10).reverse()
+    var top_10_sample_values = get_OTU['sample_values'].slice(0,10).reverse()
 
-    var trace1 =
+    var colors = ['#f3a005', '#f4af2b','#f5bd44','#f7cb5b','#f9d871','#fce588', '#fce588', '#fff19f', '#f7ef99','#efed94','#e6eb8e']
+
+    var top_10_OTU_trace =
       {
 
-        x: get_top_10_sample_values,
-        y: get_top_10_OTU_id_lbl,
-        text: get_top_10_OTU_labels,
+        x: top_10_sample_values,
+        y: top_10_OTU_id_lbl,
+        text: top_10_OTU_labels,
         type: "bar",
-        orientation: "h"
+        orientation: "h",
+        marker:{
+          color: colors}
         
       }
 
-
-
+    var bar_layout = {
+      title: `<b>Top 10 OTUs found for Test Subject :</b> ${Sel_SubjID}`,
+      font:{
+        family: 'Raleway, sans-serif'
+      },
+      showlegend: false,
+      xaxis: {
+        zeroline: false,
+        tickangle: -45
+      },
+      yaxis: {
+        zeroline: false,
+        tickangle: 360,
+        gridwidth: 2
+      },
+      bargap :0.05
+    }  
     // Data array
-    Data = [trace1]
+    top_10_Data = [top_10_OTU_trace]
 
-    // console.log(Data)
+    // console.log(top_10_Data)
 
     // Render the plot to the div tag with id "plot"
-    Plotly.newPlot('bar',Data)
+    Plotly.newPlot('bar',top_10_Data, bar_layout)
 
-    get_OTU_id = get_OTU['otu_ids']
-    get_otu_labels = get_OTU['otu_labels']
-    get_sample_values = get_OTU['sample_values']
 
-    var trace2 = {
-        x: get_OTU_id,
-        y: get_sample_values,
-        mode: 'markers',
-        text: get_otu_labels,
-        marker: {
-          size : get_sample_values,
-          color: get_OTU_id,
-          colorscale: "Electric"
-        }
-      };
-      
-      var data2 = [trace2];
-      
-      var layout = {
-        showlegend: false,
-        height: 500,
-        width: 1000
-      };
-      
-      Plotly.newPlot('bubble', data2, layout);
+    // Bubble chart
+    var otu_id = get_OTU['otu_ids']
+    var otu_labels = get_OTU['otu_labels']
+    var sample_values = get_OTU['sample_values']
+
+    dispBubbleChart(otu_id,otu_labels,sample_values)
+
 
     })
 }  
 
+function dispGauge(wfreq){
+
+  // pie chart is used to create a gauge chart
+  var drawGauge = {
+    type: 'pie',
+    showlegend: false,
+    hole: 0.4,
+    rotation: 90,
+    // dividing the semi circle to 9 equal parts
+    values: [180/9, 180/9, 180/9, 180/9, 180/9, 180/9, 180/9, 180/9, 180/9, 180],
+    text: ['0-1','1-2','2-3','3-4','4-5','5-6','6-7','7-8','8-9'],
+    direction: 'clockwise',
+    textinfo: 'text',
+    textposition: 'inside',
+    marker: {
+      
+      colors: ['#a7ca4a', '#b6d357','#c6db65','#d4e473','#e3ed80','#f1f68e', '#ffff9d', '#fcf085', '#f9e16d','white'],  
+      labels: ['0-1','1-2','2-3','3-4','4-5','5-6','6-7','7-8','8-9',''],
+      hoverinfo: "label"
+    },
+    hoverinfo: "skip"
+  }
+
+  // origin of the needle . its scatter
+  var dot = {
+    type: 'scatter',
+    x: [0],
+    y: [0],
+    marker: {
+      size: 14,
+      color:'black'
+    },
+    showlegend: false,
+    hoverinfo: "skip"
+  }
+
+  // the needle (triangular version) 
+
+    // add weights to the degrees to correct needle
+  var weight = 0;
+  if (wfreq == 2 || wfreq == 3){
+    weight = 3;
+  } else if (wfreq == 4){
+    weight = 1;
+  } else if (wfreq == 5){
+    weight = -.5;
+  } else if (wfreq == 6){
+    weight = -2;
+  } else if (wfreq == 7){
+    weight = -3;
+  }
+
+  var degrees = 180-(20 * wfreq + weight); // equal degrees of 20 
+  var radius = .5;
+  var radians = degrees * Math.PI / 180;
+  var aX = 0.025 * Math.cos((radians) * Math.PI / 180);
+  var aY = 0.025 * Math.sin((radians) * Math.PI / 180);
+  var bX = -0.025 * Math.cos((radians) * Math.PI / 180);
+  var bY = -0.025 * Math.sin((radians) * Math.PI / 180);
+  var cX = radius * Math.cos(radians);
+  var cY = radius * Math.sin(radians);
+
+
+  // triangle
+  var path = 'M ' + aX + ' ' + aY +
+            ' L ' + bX + ' ' + bY +
+            ' L ' + cX + ' ' + cY +
+            ' Z';
+
+  //console.log(path)          
+
+  var gaugeLayout = {
+    title: "<b>Belly Button Washing Frequency</b><br>Scrubs per Week",
+    shapes:[{
+        type: 'path',
+        path: path,
+        fillcolor: 'black',
+        line: {
+          color: 'black'
+        }
+      }],
+    xaxis: {
+            range: [-1, 1],
+            fixedrange: true,
+            showticklabels:false,
+            zeroline:false, 
+            showgrid: false
+          },
+    yaxis: {
+            range: [-1, 1],
+            fixedrange: true,
+            showticklabels:false,
+            zeroline:false, 
+            showgrid: false
+          }
+  };
+
+  Plotly.newPlot("gauge", [drawGauge, dot], gaugeLayout);
+}
+
+
+function dispBubbleChart(OTU_id,otu_labels,sample_values)
+    {
+      var bubble_trace = {
+      x: OTU_id,
+      y: sample_values,
+      mode: 'markers',
+      text: otu_labels,
+      marker: {
+        size : sample_values,
+        color: OTU_id,
+        colorscale: "Portland"
+      }
+    };
+    
+    var bubble_data = [bubble_trace];
+    
+    var bubble_layout = {
+      title: `<b>All Sample values for Test subject :</b> ${Sel_SubjID}`,
+      showlegend: false
+      
+    };
+    
+    Plotly.newPlot('bubble', bubble_data, bubble_layout);}
+
+
 init()
-
-
