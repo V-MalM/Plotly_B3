@@ -52,7 +52,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
 * The Gauge Chart plots the weekly washing frequency of the individual. It is built using  <https://plot.ly/javascript/gauge-charts/> as a guide.
 
     * The needle shows the wash frequecy of selected subject whenever a new sample is selected.
-        <p><img src="DashBoard/Images/gauge_new.jpg" width="50%"></p>
+        <p><img src="DashBoard/Images/gauge_nw.jpg" width="50%"></p>
     <!-- ![dashboard](DashBoard/Images/gauge_nw.jpg) -->
 
     * Reference
