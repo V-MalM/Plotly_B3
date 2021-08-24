@@ -70,7 +70,7 @@ function optionChanged(Sel_SubjID) {
     // To do the sorting , we need to join the values from matching indices of 3 arrays to an array
     // of objects with key value pair properties
     // Then, sort by sample_values and rearrange into arrays using map method and then plot
-    // In this case though , the data is already sorted. So we are goinf to slice and reverse
+    // In this case though , the data is already sorted. So we will slice and reverse
 
     // Bar Chart
     var top_10_OTU_id        = get_OTU['otu_ids'].slice(0,10).reverse()
