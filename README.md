@@ -1,4 +1,12 @@
 #  Belly Button Biodiversity
+![Bacteria](DashBoard/Images/bacteria.jpg)
+## Repository Files and Folders:
+
+*  [DashBoard(Code)](/DashBoard) : 
+    * [App.js](/Mission_to_Mars/static/css.app.js)  
+    * [Images](/Mission_to_Mars/Images)    
+
+## Project Description 
 
 An interactive dashboard to explore the [Belly Button Biodiversity dataset](http://robdunnlab.com/projects/belly-button-biodiversity/), which catalogs the microbes that colonize human navels.
 
@@ -9,7 +17,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
 
 ## Step 1: Plotly
 
-1. Used the D3 library to read in `samples.json`.
+1. Used the D3 library to read in  [samples.json](samples.json).
 
 2. Created a horizontal bar chart with a dropdown menu to display the top 10 OTUs found in that individual.
     * Used `sample_values` as the values for the bar chart.
@@ -41,7 +49,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
         <p><img src="DashBoard/Images/dashboard_new.jpg" width="80%"></p>
     <!-- ![dashboard](DashBoard/Images/dashboard_new.jpg) -->
 
-* The Gauge Chart plots the weekly washing frequency of the individual. It is built using  <https://plot.ly/javascript/gauge-charts/> as a guide
+* The Gauge Chart plots the weekly washing frequency of the individual. It is built using  <https://plot.ly/javascript/gauge-charts/> as a guide.
 
     * The needle shows the wash frequecy of selected subject whenever a new sample is selected.
         <p><img src="DashBoard/Images/gauge_new.jpg" width="50%"></p>
