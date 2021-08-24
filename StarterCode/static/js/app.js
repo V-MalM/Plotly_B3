@@ -113,7 +113,7 @@ function dispBar(top_10_sample_values,top_10_OTU_id_lbl,top_10_OTU_labels)
       }
 
     var bar_layout = {
-      title: `<b>Top 10 OTUs found for Test Subject :</b> ${Sel_SubjID}`,
+      title: `<b>Top 10 OTUs found for Test Subject </b>`,
       font:{
         family: 'Raleway, sans-serif'
       },
@@ -244,7 +244,7 @@ function dispBubbleChart(OTU_id,OTU_labels,Samp_values)
     {
       var bubble_trace = {
       x: OTU_id,
-      y: sample_values,
+      y: Samp_values,
       mode: 'markers',
       text: OTU_labels,
       marker: {
@@ -257,7 +257,7 @@ function dispBubbleChart(OTU_id,OTU_labels,Samp_values)
     var bubble_data = [bubble_trace];
     
     var bubble_layout = {
-      title: `<b>All Sample values for Test subject :</b> ${Sel_SubjID}`,
+      title: `<b>All Sample values for Test subject </b>`,
       showlegend: false
       
     };
