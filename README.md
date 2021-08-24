@@ -49,7 +49,7 @@ The dataset reveals that a small handful of microbial species (also called opera
     * Modified the example gauge code to account for values ranging from 0 through 9.
 
     * The needle shows the wash frequecy of selected subject whenever a new sample is selected.
-        * ![dashboard](DashBoard/Images/gauge.jpg)
+    * ![dashboard](DashBoard/Images/gauge.jpg)
 
     * Reference
         * [Plotly.js documentation](https://plot.ly/javascript/) when building the plots.
