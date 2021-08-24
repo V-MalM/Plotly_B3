@@ -54,3 +54,6 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
 
     * Reference
         * [Plotly.js documentation](https://plot.ly/javascript/) when building the plots.
+        * https://community.plotly.com/t/animations-on-gauge-needle/5804
+        * https://stackoverflow.com/questions/53211506/calculating-adjusting-the-needle-in-gauge-chart-plotly-js
+        * https://observablehq.com/@arronhunt/building-a-gauge-meter-with-plotly
