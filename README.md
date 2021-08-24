@@ -42,12 +42,12 @@ The dataset reveals that a small handful of microbial species (also called opera
 
     * Layout of the dashboard is shown below:
 
-    * ![dashboard](DashBoard/Images/dashboard.jpg)
+![dashboard](DashBoard/Images/dashboard.jpg)
 
     * The Gauge Chart plots the weekly washing frequency of the individual. It is built using  <https://plot.ly/javascript/gauge-charts/> as a guide
 
     * The needle shows the wash frequecy of selected subject whenever a new sample is selected.
-    * ![dashboard](DashBoard/Images/gauge.jpg)
+* ![dashboard](DashBoard/Images/gauge.jpg)
 
     * Reference
         * [Plotly.js documentation](https://plot.ly/javascript/) when building the plots.
