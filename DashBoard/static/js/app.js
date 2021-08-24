@@ -225,7 +225,7 @@ function dispGauge(wfreq){
 }
 
 
-function dispBubbleChart(OTU_id,OTU_labels,Samp_values)
+function dispBubbleChart(OTU_id,OTU_labels,Samp_values,Sel_SubjID)
     {
       var bubble_trace = {
       x: OTU_id,
