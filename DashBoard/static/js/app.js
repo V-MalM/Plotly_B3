@@ -242,7 +242,7 @@ function dispBubbleChart(OTU_id,OTU_labels,Samp_values,Sel_SubjID)
     var bubble_data = [bubble_trace];
     
     var bubble_layout = {
-      title: `<b>All Sample values in Test subject: </b>${Sel_SubjID}`,
+      title: `<b>All OTU Sample values in Test subject: </b>${Sel_SubjID}`,
       showlegend: false
       
     };
