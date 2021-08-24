@@ -15,7 +15,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
     * Used `sample_values` as the values for the bar chart.
     * Used `otu_ids` as the labels for the bar chart.
     * Used `otu_labels` as the hovertext for the chart.
-        <p><img src="DashBoard/Images/horizontal_bar.jpg" width="25%"></p>
+        <p><img src="DashBoard/Images/horizontal_bar.jpg" width="50%"></p>
     <!-- ![Bar](DashBoard/Images/horizontal_bar.jpg) -->
 
 3. Created a bubble chart that displays each sample.
@@ -32,7 +32,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
 
 5. Displayed each key-value pair from the metadata JSON object .
     * Metadata
-        <p><img src="DashBoard/Images/metadata.jpg" width="10%"></p>
+        <p><img src="DashBoard/Images/metadata.jpg" width="20%"></p>
     <!-- ![Bar](DashBoard/Images/metadata.jpg) -->
 
 6. All the plots change the display based on the data for the current sample selection.
@@ -44,7 +44,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
 * The Gauge Chart plots the weekly washing frequency of the individual. It is built using  <https://plot.ly/javascript/gauge-charts/> as a guide
 
     * The needle shows the wash frequecy of selected subject whenever a new sample is selected.
-        <p><img src="DashBoard/Images/gauge_new.jpg" width="25%"></p>
+        <p><img src="DashBoard/Images/gauge_new.jpg" width="50%"></p>
     <!-- ![dashboard](DashBoard/Images/gauge_new.jpg) -->
 
     * Reference
