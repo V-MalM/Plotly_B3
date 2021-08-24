@@ -175,23 +175,8 @@ function dispGauge(wfreq){
     hoverinfo: "skip"
   }
 
-  // the needle (triangular version) 
 
-    // add weights to the degrees to correct needle
-  var weight = 0;
-  if (wfreq == 2 || wfreq == 3){
-    weight = 3;
-  } else if (wfreq == 4){
-    weight = 1;
-  } else if (wfreq == 5){
-    weight = -.5;
-  } else if (wfreq == 6){
-    weight = -2;
-  } else if (wfreq == 7){
-    weight = -3;
-  }
-
-  var degrees = 180-(20 * wfreq + weight); // equal degrees of 20 
+  var degrees = 180-(20 * wfreq); // equal degrees of 20 
   var radius = .5;
   var radians = degrees * Math.PI / 180;
   var aX = 0.025 * Math.cos((radians) * Math.PI / 180);
