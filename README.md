@@ -46,8 +46,6 @@ The dataset reveals that a small handful of microbial species (also called opera
 
     * The Gauge Chart plots the weekly washing frequency of the individual. It is built using  <https://plot.ly/javascript/gauge-charts/> as a guide
 
-    * Modified the example gauge code to account for values ranging from 0 through 9.
-
     * The needle shows the wash frequecy of selected subject whenever a new sample is selected.
     * ![dashboard](DashBoard/Images/gauge.jpg)
 
