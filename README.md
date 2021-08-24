@@ -24,7 +24,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
     * Used `sample_values` for the marker size.
     * Used `otu_ids` for the marker colors.
     * Used `otu_labels` for the text values.
-        <p><img src="DashBoard/Images/bubble.jpg" width="50%"></p>
+        <p><img src="DashBoard/Images/bubble.jpg" width="80%"></p>
 
     <!-- ![Bubble](DashBoard/Images/bubble.jpg) -->
 
