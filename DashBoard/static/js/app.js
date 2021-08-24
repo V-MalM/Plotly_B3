@@ -78,7 +78,7 @@ function optionChanged(Sel_SubjID) {
     var top_10_OTU_labels    = get_OTU['otu_labels'].slice(0,10).reverse()
     var top_10_sample_values = get_OTU['sample_values'].slice(0,10).reverse()
     
-    dispBar(top_10_sample_values,top_10_OTU_id_lbl,top_10_OTU_labels)
+    dispBar(top_10_sample_values,top_10_OTU_id_lbl,top_10_OTU_labels,Sel_SubjID)
     
 
     // Bubble chart
@@ -86,7 +86,7 @@ function optionChanged(Sel_SubjID) {
     var otu_labels = get_OTU['otu_labels']
     var sample_values = get_OTU['sample_values']
 
-    dispBubbleChart(otu_id,otu_labels,sample_values)
+    dispBubbleChart(otu_id,otu_labels,sample_values,Sel_SubjID)
 
 
     })
@@ -94,7 +94,7 @@ function optionChanged(Sel_SubjID) {
 
 
 
-function dispBar(top_10_sample_values,top_10_OTU_id_lbl,top_10_OTU_labels)
+function dispBar(top_10_sample_values,top_10_OTU_id_lbl,top_10_OTU_labels,Sel_SubjID)
     {
     
     var colors = ['#f3a005', '#f4af2b','#f5bd44','#f7cb5b','#f9d871','#fce588', '#fce588', '#fff19f', '#f7ef99','#efed94','#e6eb8e']
@@ -113,7 +113,7 @@ function dispBar(top_10_sample_values,top_10_OTU_id_lbl,top_10_OTU_labels)
       }
 
     var bar_layout = {
-      title: `<b>Top 10 OTUs found for Test Subject </b>`,
+      title: `<b>Top 10 OTUs found in Test Subject: </b>${Sel_SubjID}`,
       font:{
         family: 'Raleway, sans-serif'
       },
@@ -242,7 +242,7 @@ function dispBubbleChart(OTU_id,OTU_labels,Samp_values)
     var bubble_data = [bubble_trace];
     
     var bubble_layout = {
-      title: `<b>All Sample values for Test subject </b>`,
+      title: `<b>All Sample values in Test subject: </b>${Sel_SubjID}`,
       showlegend: false
       
     };
