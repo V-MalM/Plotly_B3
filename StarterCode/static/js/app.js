@@ -8,7 +8,7 @@ function init()
     var SubjID = data['names']
     for (var i in SubjID)
     {
-    sel_option = Subject_Dropdown.append("option").text(SubjID[i])
+    var sel_option = Subject_Dropdown.append("option").text(SubjID[i])
     sel_option.attr("value", SubjID[i])
     }
     
@@ -72,11 +72,31 @@ function optionChanged(Sel_SubjID) {
     // Then, sort by sample_values and rearrange into arrays using map method and then plot
     // In this case though , the data is already sorted. So we are goinf to slice and reverse
 
+    // Bar Chart
     var top_10_OTU_id        = get_OTU['otu_ids'].slice(0,10).reverse()
     var top_10_OTU_id_lbl    = top_10_OTU_id.map(otu_ID => `OTU ${otu_ID}`)
     var top_10_OTU_labels    = get_OTU['otu_labels'].slice(0,10).reverse()
     var top_10_sample_values = get_OTU['sample_values'].slice(0,10).reverse()
+    
+    dispBar(top_10_sample_values,top_10_OTU_id_lbl,top_10_OTU_labels)
+    
 
+    // Bubble chart
+    var otu_id = get_OTU['otu_ids']
+    var otu_labels = get_OTU['otu_labels']
+    var sample_values = get_OTU['sample_values']
+
+    dispBubbleChart(otu_id,otu_labels,sample_values)
+
+
+    })
+}  
+
+
+
+function dispBar(top_10_sample_values,top_10_OTU_id_lbl,top_10_OTU_labels)
+    {
+    
     var colors = ['#f3a005', '#f4af2b','#f5bd44','#f7cb5b','#f9d871','#fce588', '#fce588', '#fff19f', '#f7ef99','#efed94','#e6eb8e']
 
     var top_10_OTU_trace =
@@ -116,18 +136,8 @@ function optionChanged(Sel_SubjID) {
 
     // Render the plot to the div tag with id "plot"
     Plotly.newPlot('bar',top_10_Data, bar_layout)
+  }
 
-
-    // Bubble chart
-    var otu_id = get_OTU['otu_ids']
-    var otu_labels = get_OTU['otu_labels']
-    var sample_values = get_OTU['sample_values']
-
-    dispBubbleChart(otu_id,otu_labels,sample_values)
-
-
-    })
-}  
 
 function dispGauge(wfreq){
 
@@ -230,15 +240,15 @@ function dispGauge(wfreq){
 }
 
 
-function dispBubbleChart(OTU_id,otu_labels,sample_values)
+function dispBubbleChart(OTU_id,OTU_labels,Samp_values)
     {
       var bubble_trace = {
       x: OTU_id,
       y: sample_values,
       mode: 'markers',
-      text: otu_labels,
+      text: OTU_labels,
       marker: {
-        size : sample_values,
+        size : Samp_values,
         color: OTU_id,
         colorscale: "Portland"
       }
