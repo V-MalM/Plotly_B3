@@ -23,7 +23,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
     * Used `sample_values` as the values for the bar chart.
     * Used `otu_ids` as the labels for the bar chart.
     * Used `otu_labels` as the hovertext for the chart.
-        <p><img src="DashBoard/Images/horizontal_bar.jpg" width="50%"></p>
+        <p><img src="DashBoard/Images/horizontal_bar_n.jpg" width="50%"></p>
     <!-- ![Bar](DashBoard/Images/horizontal_bar.jpg) -->
 
 3. Created a bubble chart that displays each sample.
@@ -46,7 +46,7 @@ https://v-malm.github.io/Plotly_B3/DashBoard/
 6. All the plots change the display based on the data for the current sample selection.
 
     * Layout of the dashboard is shown below:
-        <p><img src="DashBoard/Images/dashboard_new.jpg" width="80%"></p>
+        <p><img src="DashBoard/Images/dashboard_nw.jpg" width="80%"></p>
     <!-- ![dashboard](DashBoard/Images/dashboard_new.jpg) -->
 
 * The Gauge Chart plots the weekly washing frequency of the individual. It is built using  <https://plot.ly/javascript/gauge-charts/> as a guide.
