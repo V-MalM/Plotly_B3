@@ -98,7 +98,7 @@ function dispBar(top_10_sample_values,top_10_OTU_id_lbl,top_10_OTU_labels,Sel_Su
     {
     
     var colors = ['#f3a005', '#f4af2b','#f5bd44','#f7cb5b','#f9d871','#fce588', '#fce588', '#fff19f', '#f7ef99','#efed94','#e6eb8e']
-
+    colors = colors.reverse()
     var top_10_OTU_trace =
       {
 
