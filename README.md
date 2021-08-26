@@ -3,7 +3,7 @@
 ## Repository Files and Folders:
 
 *  [DashBoard](/DashBoard)
-    * [App.js](/DashBoard/static/js/app.js)  
+    * [static/js](/DashBoard/static/js)  
     * [Images](/DashBoard/Images)    
 
 ## Project Description 
