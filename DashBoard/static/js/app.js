@@ -58,9 +58,6 @@ function optionChanged(Sel_SubjID) {
     })
 
     var Samples = data['samples']
-    // console.log(Samples)
-    // 'Lets figure out max sample value among all samples for all ids to set xlim for xaxis'
-
     var get_OTU = Samples.filter(sel_OTU=>sel_OTU.id == Sel_SubjID)[0]
 
     // console.log("This IS", get_OTU)
@@ -122,7 +119,6 @@ function dispBar(top_10_sample_values,top_10_OTU_id_lbl,top_10_OTU_labels,Sel_Su
       },
       showlegend: false,
       xaxis: {
-        //range: [0, 200],
         zeroline: false,
         tickangle: -45
       },
